@@ -35,6 +35,12 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-svgmap-india:
+    specifier: ^1.1.0
+    version: 1.1.0(react-dom@18.2.0)(react@18.2.0)
+  state-district-component:
+    specifier: ^1.0.3
+    version: 1.0.3
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -2091,6 +2097,16 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
+  /react-svgmap-india@1.1.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-DMUVbReWIM24sIn8tqTa5Wa5aNrHN/kB8T8mOCzgVHol/042d3eZoxMRubD6ZALuCWtqdqfR+drJsJS4ihUw5Q==}
+    peerDependencies:
+      react: ^17.0.0
+      react-dom: ^17.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -2255,6 +2271,14 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /state-district-component@1.0.3:
+    resolution: {integrity: sha512-Opuy/lXo4AnTPEMWT7QW7OEO49fQSvRBZu+sS5lvcm8R9/cnjcqTw8eJBi/FcmDcWxm0JM78SZpzrcyKO/8hbg==}
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /streamsearch@1.1.0:
