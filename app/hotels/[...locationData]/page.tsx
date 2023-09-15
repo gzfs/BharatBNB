@@ -1,0 +1,36 @@
+import HotelCard from "@/app/components/HotelCard";
+import HotelHeading from "@/app/components/HotelHeading";
+import { capitalizeString } from "@/app/utils/Helper.funcs";
+
+export default function hotelsBasedOnLocationPage({
+  params,
+}: {
+  params: { locationData: string };
+}) {
+  return (
+    <main>
+      <HotelHeading districtName={params.locationData[1]} />
+      <p className="py-10 text-4xl font-Coolvetica text-center">
+        <span className="text-[#4BAF32]">Explore,</span>{" "}
+        <span className="text-[#F6762D]">
+          {capitalizeString(params.locationData[1])
+            .split("-")
+            .map((seperateString) => {
+              return capitalizeString(seperateString);
+            })
+            .join(" ")}
+        </span>
+      </p>
+      <div className="grid grid-cols-4 content-center justify-center gap-y-10">
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+      </div>
+    </main>
+  );
+}
