@@ -10,7 +10,7 @@ export default function TellUsAboutYourPlace() {
         initial={{ opacity: 0 }}
         className="font-Coolvetica flex flex-col h-full justify-center p-10"
       >
-        <p className="text-xl text-[#F6762D]">Step One</p>
+        <p className="text-[#F6762D] text-3xl">Step One</p>
         <p className="text-6xl my-6 text-[#4BAF32]">
           Tell us about your place.
         </p>
