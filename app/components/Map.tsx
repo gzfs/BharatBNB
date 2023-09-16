@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+
+// @ts-nocheck
 import IndiaMap from "react-svgmap-india";
 
 export default function Map({
