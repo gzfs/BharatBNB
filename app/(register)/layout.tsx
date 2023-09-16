@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RegisterNavbar from "../components/RegisterNavbar";
 
 export const metadata: Metadata = {
   title: "BharatBNB",
@@ -10,5 +11,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <main className="h-screen">
+      <RegisterNavbar />
+      {children}
+    </main>
+  );
 }
