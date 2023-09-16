@@ -1,4 +1,3 @@
-import { Toaster } from "@/components/ui/toaster";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -19,7 +18,6 @@ export default function RootLayout({
       <Navbar />
       {children}
       <Footer />
-      <Toaster />
     </>
   );
 }

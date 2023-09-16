@@ -33,7 +33,7 @@ export default function SingleHotel() {
   return (
     <main className="flex-col max-w-full px-10">
       <p className="pt-5 pb-10 text-4xl font-Coolvetica text-center">
-        <span className="text-[#4BAF32]">Rajbhavan,</span>{" "}
+        <span className="text-[#4BAF32]">Rajbhavan,</span>
         <span className="text-[#F6762D]">Chennai</span>
       </p>
 
