@@ -71,19 +71,12 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center w-[250px]">
+      <div className="flex justify-between items-center w-[200px]">
         <Link
-          href={`/register/${currentNavSelection.toLowerCase()}`}
+          href={`/register`}
           className="text-lg mr-4 text-[#F6762D]"
         >
-          <u>
-            Bharatbnb your{" "}
-            {currentNavSelection === "Home"
-              ? "house"
-              : currentNavSelection === "Foods"
-              ? "restaurant"
-              : "transport"}
-          </u>
+          <u>Become a Partner</u>
         </Link>
         <Image
           src="/assets/imgs/icons/user.svg"
