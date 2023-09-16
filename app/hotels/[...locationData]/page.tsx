@@ -23,13 +23,6 @@ export default function hotelsBasedOnLocationPage({
       </p>
       <div className="grid grid-cols-4 content-center justify-center gap-y-10">
         <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
-        <HotelCard hotelID="sjfhwuiqyr9q273" />
       </div>
     </main>
   );

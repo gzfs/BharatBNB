@@ -49,7 +49,11 @@ export default function Home() {
                   value={selectedDistrict}
                 >
                   {stateDistricts?.map((stateDistrict, iVal) => {
-                    return <option>{stateDistrict}</option>;
+                    return (
+                      <option key={stateDistrict}>
+                        {stateDistrict}
+                      </option>
+                    );
                   })}
                 </select>
               </p>
