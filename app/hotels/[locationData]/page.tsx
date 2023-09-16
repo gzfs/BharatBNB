@@ -9,11 +9,13 @@ export default function hotelsBasedOnLocationPage({
 }) {
   return (
     <main>
-      <HotelHeading districtName={params.locationData[1]} />
+      <HotelHeading
+        districtName={params.locationData.split("-")[1]}
+      />
       <p className="py-10 text-4xl font-Coolvetica text-center">
         <span className="text-[#4BAF32]">Explore,</span>{" "}
         <span className="text-[#F6762D]">
-          {capitalizeString(params.locationData[1])
+          {capitalizeString(params.locationData.split("-")[1])
             .split("-")
             .map((seperateString) => {
               return capitalizeString(seperateString);

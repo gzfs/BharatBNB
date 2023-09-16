@@ -5,7 +5,7 @@ export default function HotelCard({ hotelID }: { hotelID: string }) {
     <div className="font-Coolvetica flex flex-col items-center">
       <div className="relative">
         <div className="absolute"></div>
-        <Link href={`/hotel/${hotelID}`}>
+        <Link href={`/hotels/hotel/${hotelID}`}>
           <img src="/assets/imgs/dummy/Bruh.png" width="250px" />
         </Link>
         <div className="mt-4">

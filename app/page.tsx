@@ -63,9 +63,9 @@ export default function Home() {
             href={`/hotels/${selectedState
               ?.toLowerCase()
               ?.split(" ")
-              ?.join("-")}/${selectedDistrict
+              ?.join("")}-${selectedDistrict
               .split(" ")
-              .join("-")
+              .join("")
               .toLowerCase()}`}
             className="px-8 py-3 bg-[#F6762D] text-lg rounded-full text-white w-fit"
           >
