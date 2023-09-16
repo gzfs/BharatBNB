@@ -4,7 +4,6 @@ import Auth from "@/app/components/Auth";
 import Divider from "@/app/components/Divider";
 import ReserveDetails from "@/app/components/ReserveDetails";
 import ReserveHotelCard from "@/app/components/ReserveHotelCard";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function ReservePage() {
