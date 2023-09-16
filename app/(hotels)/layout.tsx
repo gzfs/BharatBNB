@@ -16,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Toaster/>
       <Navbar />
       {children}
       <Footer />
+      <Toaster />
     </>
   );
 }
