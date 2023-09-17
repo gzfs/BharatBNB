@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-export default function TellUsAboutYourPlace() {
+import Link from "next/link";
+export default function TellUsAboutYourPlace({
+  params,
+}: {
+  params: { listingid: string };
+}) {
   return (
     <main className="h-[90.2vh] flex justify-center items-center md:flex-row flex-col">
       <motion.div
@@ -19,6 +24,12 @@ export default function TellUsAboutYourPlace() {
           and if guests will book the entire place or just a room.
           Then let us know the location and how many guests can stay.
         </p>
+        <Link
+          href={`/register/home/${params.listingid}/structure`}
+          className="font-Coolvetica text-2xl px-10 py-2 border-2 rounded-full border-[#F6762D] w-fit text-[#F6762D] mt-4 hover:text-white hover:bg-[#F6762D] transition-colors"
+        >
+          Next
+        </Link>
       </motion.div>
       <video
         className="w-6/12"
