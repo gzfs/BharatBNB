@@ -1,9 +1,14 @@
 "use client";
 
 import Auth from "@/app/components/Auth";
+import Convenience from "@/app/components/Convenience";
 import Divider from "@/app/components/Divider";
+import Payment from "@/app/components/Payment";
+import Policies from "@/app/components/Policies";
+import Required from "@/app/components/Required";
 import ReserveDetails from "@/app/components/ReserveDetails";
 import ReserveHotelCard from "@/app/components/ReserveHotelCard";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function ReservePage() {
@@ -14,14 +19,16 @@ export default function ReservePage() {
   const [petCount, setPetCount] = useState(0);
 
   return (
-    <main className="px-10">
+    <main className="md:px-10 px-5">
       <div className="flex">
-        <img src="/assets/imgs/icons/Caret.svg" alt="Back" />
         <p className="text-4xl font-Coolvetica text-[#4BAF32] py-6">
           Request to Book
         </p>
       </div>
-      <div className="flex w-full">
+      <div className="flex w-full lg:flex-row-reverse flex-col">
+        <div className="lg:w-6/12 w-full md:pb-0 pb-4">
+          <ReserveHotelCard />
+        </div>
         <div className="w-6/12">
           <ReserveDetails
             checkInDate={checkInDate}
@@ -36,9 +43,20 @@ export default function ReservePage() {
             setPetCount={setPetCount}
           />
           <Divider />
-          <Auth />
+          {false ? (
+            <Auth />
+          ) : (
+            <div>
+              <Payment />
+              <Divider />
+              <Required />
+              <Divider />
+              <Convenience />
+              <Divider />
+              <Policies />
+            </div>
+          )}
         </div>
-        <ReserveHotelCard />
       </div>
     </main>
   );

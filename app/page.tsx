@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Map from "./components/Map";
+import Map, { stateCodes } from "./components/Map";
 import Link from "next/link";
 import { getDistrictFromState } from "./utils/Districts.list";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [selectedState, setSelectedState] = useState("Tamil Nadu");
@@ -20,13 +21,16 @@ export default function Home() {
   }, [selectedState]);
 
   return (
-    <main className="flex flex-col">
-      <div className="flex justify-around flex-grow p-12">
-        <Map
-          setSelectedArea={setSelectedState}
-          setDistrictArea={setSelectedDistrict}
-        />
-        <div className="font-Coolvetica class flex flex-col justify-evenly w-4/12">
+    <main className="flex flex-col h-screen md:h-fit mx-auto">
+      <Navbar />
+      <div className="flex md:justify-around flex-grow p-12 justify-center items-stretch">
+        <div className="hidden md:block">
+          <Map
+            setSelectedArea={setSelectedState}
+            setDistrictArea={setSelectedDistrict}
+          />
+        </div>
+        <div className="font-Coolvetica class flex flex-col justify-evenly lg:w-5/12">
           <p className="text-3xl">
             <span className="text-[#4BAF32]">Choose your </span>
             <span className="text-[#F6762D]">Destination</span>
@@ -35,14 +39,28 @@ export default function Home() {
             <div>
               <p className="text-[#4BAF32]">Destination</p>
               <p className="text-[#F6762D] text-3xl">
-                {selectedState}
+                <select
+                  className="outline-none w-full lg:w-[80%]"
+                  onChange={(eV) => {
+                    setSelectedState(eV.target.value);
+                  }}
+                  value={selectedState}
+                >
+                  {Object.values(stateCodes).map((stateValues) => {
+                    return (
+                      <option key={stateValues} className="text-lg">
+                        {stateValues}
+                      </option>
+                    );
+                  })}
+                </select>
               </p>
             </div>
             <div className="mt-4">
               <p className="text-[#4BAF32]">District</p>
-              <p className="text-[#F6762D] text-3xl">
+              <div className="text-[#F6762D] text-3xl">
                 <select
-                  className="w-[80%] outline-none"
+                  className="w-full lg:w-[80%] outline-none"
                   onChange={(eV) => {
                     setSelectedDistrict(eV.target.value);
                   }}
@@ -50,13 +68,13 @@ export default function Home() {
                 >
                   {stateDistricts?.map((stateDistrict, iVal) => {
                     return (
-                      <option key={stateDistrict}>
+                      <option key={stateDistrict} className="text-lg">
                         {stateDistrict}
                       </option>
                     );
                   })}
                 </select>
-              </p>
+              </div>
             </div>
           </div>
           <Link
