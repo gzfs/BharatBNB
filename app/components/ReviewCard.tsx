@@ -4,7 +4,7 @@ import UserAvatar from "./UserAvatar";
 
 const ReviewCard = () => {
   return (
-    <div className="border border-[#F6762D] px-7 pt-5 pb-7 rounded-3xl flex-col w-[450px]">
+    <div className="border border-[#F6762D] px-7 pt-5 pb-7 rounded-3xl flex-col w-[450px] module">
       <div className="flex items-center">
         <UserAvatar />
 
@@ -28,8 +28,8 @@ const ReviewCard = () => {
 
       {/* Review Detail */}
       <p className="mt-4 font-Coolvetica text-[#F6762D] text-xl">
-        Lorem ipsum dolor sit amet consectetur. Semper ut duis senectus interdum
-        quis sit sit cursus ut
+        Lorem ipsum dolor sit amet consectetur. Semper ut duis
+        senectus interdum quis sit sit cursus ut
       </p>
     </div>
   );
