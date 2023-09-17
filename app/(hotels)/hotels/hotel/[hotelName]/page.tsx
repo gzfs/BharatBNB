@@ -21,8 +21,13 @@ export default function SingleHotel() {
   const params = useParams();
 
   const handleDateCheck = () => {
-    if (checkInDate?.getTime() !== checkOutDate?.getTime()) {
+    if (checkOutDate && checkInDate && checkOutDate > checkInDate) {
       router.push(`/hotels/hotel/${params.hotelName}/reserve`);
+    } else if (checkOutDate && checkInDate && checkOutDate < checkInDate) {
+      toast({
+        variant: "destructive",
+        title: "Check Out Date must be after Check In Date",
+      });
     } else {
       toast({
         variant: "destructive",
