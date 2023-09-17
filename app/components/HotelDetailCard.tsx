@@ -39,14 +39,7 @@ const HotelDetailCard = () => {
           />{" "}
         </>
       ) : (
-        <div
-          style={{
-            height: "492px",
-            width: "50vw",
-            overflow: "hidden",
-            borderRadius: "50px",
-          }}
-        >
+        <div className="h-[492px] w-[50vw] overflow-hidden rounded-[50px]">
           <ReactBingMap
             apiKey="Ahax2zhL02yMoMS_SUD44UtdKrt7aDlcFLWy-tnro1zZzXBN-NYKQJz3XbCO1z6d"
             credentials="Ahax2zhL02yMoMS_SUD44UtdKrt7aDlcFLWy-tnro1zZzXBN-NYKQJz3XbCO1z6d"

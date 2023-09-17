@@ -6,7 +6,9 @@ import { ChefHat } from "lucide-react";
 const Amenities = () => {
   return (
     <div className="py-10 flex flex-col">
-      <h2 className="text-4xl font-Coolvetica text-[#F6762D]">Amenities</h2>
+      <h2 className="text-4xl font-Coolvetica text-[#F6762D]">
+        Amenities
+      </h2>
 
       <div className="grid grid-cols-2 py-3">
         <div className="flex items-center py-4">

@@ -1,6 +1,6 @@
 export default function ReserveHotelCard() {
   return (
-    <div className="w-6/12 border-2 border-[#F6762D] rounded-3xl p-10 flex flex-col justify-between">
+    <div className="w-full border-2 border-[#F6762D] rounded-3xl p-10 flex flex-col justify-between">
       <div className="flex w-full justify-between">
         <img
           src="/assets/imgs/dummy/imgo.svg"
