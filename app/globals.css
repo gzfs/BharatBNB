@@ -6,7 +6,3 @@
   font-family: "Coolvetica";
   src: url("/assets/fonts/Coolvetica.OTF");
 }
-
-body::-webkit-scrollbar {
-  display: none;
-}

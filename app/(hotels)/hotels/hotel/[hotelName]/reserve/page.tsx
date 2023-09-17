@@ -8,7 +8,6 @@ import Policies from "@/app/components/Policies";
 import Required from "@/app/components/Required";
 import ReserveDetails from "@/app/components/ReserveDetails";
 import ReserveHotelCard from "@/app/components/ReserveHotelCard";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function ReservePage() {

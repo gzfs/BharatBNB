@@ -21,7 +21,7 @@ export default function Privacy({
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             initial={{ opacity: 0 }}
-            className="font-Coolvetica text-5xl text-[#4BAF32] text-center mt-8 pb-6"
+            className="font-Coolvetica text-5xl text-[#4BAF32] text-center mt-8 pb-10"
           >
             What type of place will guests have?
           </motion.p>
@@ -53,7 +53,7 @@ export default function Privacy({
           </div>
           <div className="py-6">
             <Link
-              href={`/register/home/${params.listingid}/privacy`}
+              href={`/register/home/${params.listingid}/location`}
               className="font-Coolvetica text-xl px-10 py-2 border-2 rounded-xl border-[#F6762D] w-fit text-[#F6762D] hover:text-white hover:bg-[#F6762D] transition-colors"
             >
               Next

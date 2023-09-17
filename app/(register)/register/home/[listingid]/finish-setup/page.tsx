@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-export default function TellUsAboutYourPlace({
+export default function FinishSetup({
   params,
 }: {
   params: { listingid: string };
@@ -15,17 +15,16 @@ export default function TellUsAboutYourPlace({
         initial={{ opacity: 0 }}
         className="font-Coolvetica flex flex-col h-full justify-center p-10"
       >
-        <p className="text-[#F6762D] text-3xl">Step One</p>
+        <p className="text-[#F6762D] text-3xl">Step Three</p>
         <p className="text-6xl my-6 text-[#4BAF32]">
-          Tell us about your place.
+          Finish up and publish
         </p>
         <p className="text-xl text-[#F6762D]">
-          In this step, we'll ask you which type of property you have
-          and if guests will book the entire place or just a room.
-          Then let us know the location and how many guests can stay.
+          Finally, you'll choose booking settings, set up pricing and
+          publish your listing.
         </p>
         <Link
-          href={`/register/home/${params.listingid}/structure`}
+          href={`/register/home/${params.listingid}/price`}
           className="font-Coolvetica text-2xl px-10 py-2 border-2 rounded-full border-[#F6762D] w-fit text-[#F6762D] mt-4 hover:text-white hover:bg-[#F6762D] transition-colors"
         >
           Next
@@ -41,7 +40,7 @@ export default function TellUsAboutYourPlace({
           objectFit: "cover",
         }}
       >
-        <source src="https://stream.media.muscache.com/zFaydEaihX6LP01x8TSCl76WHblb01Z01RrFELxyCXoNek.mp4?v_q=high" />
+        <source src="https://stream.media.muscache.com/KeNKUpa01dRaT5g00SSBV95FqXYkqf01DJdzn01F1aT00vCI.mp4?v_q=high" />
       </video>
     </main>
   );
