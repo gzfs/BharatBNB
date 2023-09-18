@@ -3,11 +3,13 @@
 import { UserButton, useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar() {
   const [currentNavSelection, setCurrentNavSelection] = useState("Home");
   const auth = useAuth();
+  const router = useRouter();
   return (
     <nav className="font-Coolvetica px-10 py-4 flex justify-between items-center w-full">
       <Link href="/" className="text-3xl">
@@ -63,10 +65,12 @@ export default function Navbar() {
           <UserButton afterSignOutUrl="/" />
         ) : (
           <Image
+            onClick={() => router.push('/sign-in')}
             src="/assets/imgs/icons/user.svg"
             alt="Profile"
             width={30}
             height={30}
+            className="cursor-pointer"
           />
         )}
       </div>
