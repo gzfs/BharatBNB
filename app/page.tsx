@@ -5,8 +5,15 @@ import Map, { stateCodes } from "./components/Map";
 import Link from "next/link";
 import { getDistrictFromState } from "./utils/Districts.list";
 import Navbar from "./components/Navbar";
+import { getCookie, justSignedIn, removeCookie } from "@/lib/utils";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const cookie = getCookie();
+  const { user } = useUser();
+  const router = useRouter();
+
   const [selectedState, setSelectedState] = useState("Tamil Nadu");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [stateDistricts, setStateDistricts] = useState(
@@ -19,6 +26,11 @@ export default function Home() {
       setSelectedDistrict(getDistrictFromState(selectedState)[0]);
     }
   }, [selectedState]);
+
+  if(justSignedIn(user?.lastSignInAt!) && cookie){
+    removeCookie();
+    router.push(cookie)
+  }
 
   return (
     <main className="flex flex-col h-screen md:h-fit mx-auto">

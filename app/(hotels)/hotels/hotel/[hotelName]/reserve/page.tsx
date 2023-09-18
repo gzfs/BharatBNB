@@ -8,6 +8,7 @@ import Policies from "@/app/components/Policies";
 import Required from "@/app/components/Required";
 import ReserveDetails from "@/app/components/ReserveDetails";
 import ReserveHotelCard from "@/app/components/ReserveHotelCard";
+import { useAuth } from "@clerk/nextjs";
 import { useState } from "react";
 
 export default function ReservePage() {
@@ -16,6 +17,8 @@ export default function ReservePage() {
   const [adultCount, setAdultCount] = useState(1);
   const [infantCount, setInfantCount] = useState(0);
   const [petCount, setPetCount] = useState(0);
+
+  const auth = useAuth();
 
   return (
     <main className="md:px-10 px-5">
@@ -42,9 +45,7 @@ export default function ReservePage() {
             setPetCount={setPetCount}
           />
           <Divider />
-          {false ? (
-            <Auth />
-          ) : (
+          {auth.isSignedIn ? (
             <div>
               <Payment />
               <Divider />
@@ -54,6 +55,8 @@ export default function ReservePage() {
               <Divider />
               <Policies />
             </div>
+          ) : (
+            <Auth />
           )}
         </div>
       </div>
