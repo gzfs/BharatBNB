@@ -4,7 +4,7 @@ import {
   BingResponse,
   Resource,
   Point,
-} from "@/app/types/Bing.types";
+} from "@/app/_types/Bing.types";
 import ReactBingMap, { Pushpin } from "@3acaga/react-bing-maps";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -107,7 +107,7 @@ export default function Location({
               if (eV.key === "Enter") {
                 if (locationString)
                   fetch(
-                    `http://dev.virtualearth.net/REST/v1/Locations/IN/${locationString}/?key=Ahax2zhL02yMoMS_SUD44UtdKrt7aDlcFLWy-tnro1zZzXBN-NYKQJz3XbCO1z6d`
+                    `https://dev.virtualearth.net/REST/v1/Locations/IN/${locationString}/?key=Ahax2zhL02yMoMS_SUD44UtdKrt7aDlcFLWy-tnro1zZzXBN-NYKQJz3XbCO1z6d`
                   )
                     .then((bingRes) => {
                       return bingRes.json();
