@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@3acaga/react-bing-maps": "0.0.0-beta.11",
+    "@clerk/nextjs": "^4.23.5",
     "@possumsnorts/react-bingmaps": "^3.6.3",
     "@radix-ui/react-popover": "^1.0.6",
     "@radix-ui/react-slot": "^1.0.2",
@@ -26,6 +27,7 @@
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.4",
+    "js-cookie": "^3.0.5",
     "lucide-react": "^0.277.0",
     "next": "13.4.19",
     "postcss": "8.4.29",
