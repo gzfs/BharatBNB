@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import RegisterNavbar from "../components/RegisterNavbar";
+import RegisterNavbar from "../_components/RegisterNavbar";
 
 export const metadata: Metadata = {
   title: "BharatBNB",

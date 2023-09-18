@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Map, { stateCodes } from "./components/Map";
+import Map, { stateCodes } from "./_components/Map";
 import Link from "next/link";
-import { getDistrictFromState } from "./utils/Districts.list";
-import Navbar from "./components/Navbar";
+import { getDistrictFromState } from "./_utils/Districts.list";
+import Navbar from "./_components/Navbar";
 
 export default function Home() {
   const [selectedState, setSelectedState] = useState("Tamil Nadu");

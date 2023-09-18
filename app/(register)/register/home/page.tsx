@@ -1,6 +1,6 @@
 "use client";
 
-import Divider from "@/app/components/Divider";
+import Divider from "@/app/_components/Divider";
 import { Home, Copy } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";

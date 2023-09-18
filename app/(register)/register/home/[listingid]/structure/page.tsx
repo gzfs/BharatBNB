@@ -1,6 +1,6 @@
 "use client";
 
-import HotelType from "@/app/components/HostingType";
+import HotelType from "@/app/_components/HostingType";
 import {
   Home,
   Sailboat,

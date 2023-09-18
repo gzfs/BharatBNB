@@ -5,8 +5,8 @@ import { Home } from "lucide-react";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
 import Link from "next/link";
-import { Amenity } from "@/app/components/AmenitiesType";
-import AmenitiesRender from "@/app/components/AmenitiesType";
+import { Amenity } from "@/app/_components/AmenitiesType";
+import AmenitiesRender from "@/app/_components/AmenitiesType";
 
 export default function Amenities({
   params,

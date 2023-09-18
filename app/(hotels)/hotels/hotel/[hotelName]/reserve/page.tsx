@@ -1,13 +1,13 @@
 "use client";
 
-import Auth from "@/app/components/Auth";
-import Convenience from "@/app/components/Convenience";
-import Divider from "@/app/components/Divider";
-import Payment from "@/app/components/Payment";
-import Policies from "@/app/components/Policies";
-import Required from "@/app/components/Required";
-import ReserveDetails from "@/app/components/ReserveDetails";
-import ReserveHotelCard from "@/app/components/ReserveHotelCard";
+import Auth from "@/app/_components/Auth";
+import Convenience from "@/app/_components/Convenience";
+import Divider from "@/app/_components/Divider";
+import Payment from "@/app/_components/Payment";
+import Policies from "@/app/_components/Policies";
+import Required from "@/app/_components/Required";
+import ReserveDetails from "@/app/_components/ReserveDetails";
+import ReserveHotelCard from "@/app/_components/ReserveHotelCard";
 import { useState } from "react";
 
 export default function ReservePage() {
