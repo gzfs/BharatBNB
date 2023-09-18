@@ -1,10 +1,10 @@
 "use client";
 
-import Amenities from "@/app/components/Amenities";
-import HotelDetailCard from "@/app/components/HotelDetailCard";
-import OwnerDetail from "@/app/components/OwnerDetail";
-import ReserveDetails from "@/app/components/ReserveDetails";
-import Reviews from "@/app/components/Reviews";
+import Amenities from "@/app/_components/Amenities";
+import HotelDetailCard from "@/app/_components/HotelDetailCard";
+import OwnerDetail from "@/app/_components/OwnerDetail";
+import ReserveDetails from "@/app/_components/ReserveDetails";
+import Reviews from "@/app/_components/Reviews";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { useParams, useRouter } from "next/navigation";
@@ -23,7 +23,11 @@ export default function SingleHotel() {
   const handleDateCheck = () => {
     if (checkOutDate && checkInDate && checkOutDate > checkInDate) {
       router.push(`/hotels/hotel/${params.hotelName}/reserve`);
-    } else if (checkOutDate && checkInDate && checkOutDate < checkInDate) {
+    } else if (
+      checkOutDate &&
+      checkInDate &&
+      checkOutDate < checkInDate
+    ) {
       toast({
         variant: "destructive",
         title: "Check Out Date must be after Check In Date",

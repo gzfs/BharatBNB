@@ -1,4 +1,4 @@
-import { capitalizeString } from "../utils/Helper.funcs";
+import { capitalizeString } from "../_utils/Helper.funcs";
 
 export default function HotelHeading({
   districtName,

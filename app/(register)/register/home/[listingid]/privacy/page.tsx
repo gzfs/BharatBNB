@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 import { motion } from "framer-motion";
-import PlaceCard from "@/app/components/PlaceCard";
+import PlaceCard from "@/app/_components/PlaceCard";
 import { Home } from "lucide-react";
 import { useState } from "react";
 

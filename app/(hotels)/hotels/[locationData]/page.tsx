@@ -1,6 +1,6 @@
-import HotelCard from "@/app/components/HotelCard";
-import HotelHeading from "@/app/components/HotelHeading";
-import { capitalizeString } from "@/app/utils/Helper.funcs";
+import HotelCard from "@/app/_components/HotelCard";
+import HotelHeading from "@/app/_components/HotelHeading";
+import { capitalizeString } from "@/app/_utils/Helper.funcs";
 
 export default function hotelsBasedOnLocationPage({
   params,
