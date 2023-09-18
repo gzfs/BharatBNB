@@ -5,8 +5,6 @@ import Map, { stateCodes } from "./_components/Map";
 import Link from "next/link";
 import { getDistrictFromState } from "./_utils/Districts.list";
 import Navbar from "./_components/Navbar";
-import { getDistrictFromState } from "./utils/Districts.list";
-import Navbar from "./components/Navbar";
 import { getCookie, justSignedIn, removeCookie } from "@/lib/utils";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
