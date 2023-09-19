@@ -1,3 +1,5 @@
+export type Sheesh = {};
+
 export type BingResponse = {
   authenticationResultCode: string;
   brandLogoUri: string;
