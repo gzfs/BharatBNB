@@ -30,9 +30,12 @@ model Listing {
   maxAcommodationID    String
   Address              Address         @relation(fields: [addressID], references: [ID])
   addressID            String
-  PricePerNight        BigInt
+  PricePerNight        Int
   User                 User?           @relation(fields: [userID], references: [ID])
   userID               String?
+  Images               Images[]
+  StructureType        String
+  PrivacyType          String
 }
 
 model Coordinates {
@@ -41,6 +44,12 @@ model Coordinates {
   Listing   Listing[]
 
   @@id([Longitude, Lattitude])
+}
+
+model Images {
+  URL       String   @unique
+  Listing   Listing? @relation(fields: [listingID], references: [ID])
+  listingID String?
 }
 
 model Amenities {
@@ -66,6 +75,7 @@ model Address {
   StreetAddress String
   County        String
   City          String
-  Pincode       BigInt
+  Pincode       String
+  Landmark      String
   Listing       Listing[]
 }
