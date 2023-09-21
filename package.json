@@ -48,5 +48,8 @@
     "uploadthing": "^5.6.0",
     "zod": "^3.22.2",
     "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.3.1"
   }
 }

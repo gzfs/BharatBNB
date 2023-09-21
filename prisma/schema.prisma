@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  ID        String    @id @unique @default(cuid())
+  Name      String
+  Email     String    @unique
+  Listings  Listing[]
+  isPartner Boolean
+}
+
+model Listing {
+  ID                   String          @id @unique @default(cuid())
+  Name                 String
+  Description          String
+  Position             Coordinates     @relation(fields: [coordinatesLongitude, coordinatesLattitude], references: [Longitude, Lattitude])
+  coordinatesLongitude Float
+  coordinatesLattitude Float
+  Amenities            Amenities[]
+  Accomodation         MaxAcommodation @relation(fields: [maxAcommodationID], references: [ID])
+  maxAcommodationID    String
+  Address              Address         @relation(fields: [addressID], references: [ID])
+  addressID            String
+  PricePerNight        BigInt
+  User                 User?           @relation(fields: [userID], references: [ID])
+  userID               String?
+}
+
+model Coordinates {
+  Longitude Float
+  Lattitude Float
+  Listing   Listing[]
+
+  @@id([Longitude, Lattitude])
+}
+
+model Amenities {
+  Type      String
+  Name      String   @unique
+  Listing   Listing? @relation(fields: [listingID], references: [ID])
+  listingID String?
+}
+
+model MaxAcommodation {
+  ID       String    @unique @default(cuid())
+  Guests   Int
+  Bedroom  Int
+  Bathroom Int
+  Bath     Int
+  Listing  Listing[]
+}
+
+model Address {
+  ID            String    @id @unique @default(cuid())
+  HouseName     String
+  HouseNumber   String
+  StreetAddress String
+  County        String
+  City          String
+  Pincode       BigInt
+  Listing       Listing[]
+}
