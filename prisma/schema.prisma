@@ -65,6 +65,7 @@ model MaxAcommodation {
   Bedroom  Int
   Bathroom Int
   Bath     Int
+  Bed      Int
   Listing  Listing[]
 }
 
