@@ -1,17 +1,17 @@
-import {create} from 'zustand'
+import { create } from 'zustand'
 
 export type ModalType = "uploadFiles";
 
 interface ModalStore {
-    type:ModalType | null,
-    isOpen:boolean;
-    onOpen: (type:ModalType) => void;
+    type: ModalType | null,
+    isOpen: boolean;
+    onOpen: (type: ModalType) => void;
     onClose: () => void;
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
-    type:null,
+    type: null,
     isOpen: false,
-    onOpen:(type) => set({isOpen: true,type}),
-    onClose: () => set({isOpen: false,type:null})
+    onOpen: (type) => set({ isOpen: true, type }),
+    onClose: () => set({ isOpen: false, type: null })
 }))
