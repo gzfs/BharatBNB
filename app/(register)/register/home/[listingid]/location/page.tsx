@@ -43,7 +43,7 @@ export default function Location({
           initial={{ opacity: 0 }}
           className="font-Coolvetica text-5xl text-[#4BAF32] text-center mt-8 pb-10"
         >
-          Where's your place located?
+          Where&apos;s your place located?
         </motion.p>
       </div>
       {locationCoords ? (
@@ -132,6 +132,7 @@ export default function Location({
               {locationsArray?.map((locationArray) => {
                 return (
                   <motion.div
+                  key={locationArray.point.coordinates[0]}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                     initial={{ opacity: 0 }}

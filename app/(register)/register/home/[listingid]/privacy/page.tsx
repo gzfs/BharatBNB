@@ -5,14 +5,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import PlaceCard from "@/app/_components/PlaceCard";
 import { Home } from "lucide-react";
-import { useState } from "react";
+import { useListingStore } from "@/hooks/useListingStore";
 
 export default function Privacy({
   params,
 }: {
   params: { listingid: string };
 }) {
-  const [structureType, setStructureType] = useState("");
+  const {PrivacyType:privacyType,setPrivacyType} = useListingStore();
   return (
     <main>
       <div className="flex flex-col items-center">
@@ -28,24 +28,24 @@ export default function Privacy({
           <div className="grid sm:grid-cols-1 grid-rows-3 mx-auto w-full grid-cols-1 gap-2 ">
             <PlaceCard
               typeOfPlace="An entire place"
-              setStructureType={setStructureType}
-              structureType={structureType}
+              setStructureType={setPrivacyType}
+              structureType={privacyType}
               placeDesc="Guests have the whole place to themselves"
             >
               <Home size={40} color="#4BAF32" />
             </PlaceCard>
             <PlaceCard
               typeOfPlace="A room"
-              setStructureType={setStructureType}
-              structureType={structureType}
+              setStructureType={setPrivacyType}
+              structureType={privacyType}
               placeDesc="Guests have their own room, plus access to shared spaces."
             >
               <Home size={40} color="#4BAF32" />
             </PlaceCard>
             <PlaceCard
               typeOfPlace="A shared room"
-              setStructureType={setStructureType}
-              structureType={structureType}
+              setStructureType={setPrivacyType}
+              structureType={privacyType}
               placeDesc="Guests sleep in a room or common area that may be shared with you or others"
             >
               <Home size={40} color="#4BAF32" />

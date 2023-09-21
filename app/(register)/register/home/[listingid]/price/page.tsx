@@ -1,17 +1,26 @@
 "use client";
 
+import { useListingStore } from "@/hooks/useListingStore";
 import { motion } from "framer-motion";
-import { CheckCircle, Edit } from "lucide-react";
+import { Edit } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Price({
   params,
 }: {
   params: { listingid: string };
 }) {
+  const [isMounted, setIsMounted] = useState(false);
   const [isEditable, setIsEditable] = useState(false);
-  const [stayPrice, setStayPrice] = useState("");
+
+  const {price,setPrice} = useListingStore();
+
+  useEffect(() => {
+    setIsMounted(true);
+  },[])
+
+  if(!isMounted) return null;
   return (
     <main className="px-10">
       <motion.div
@@ -27,7 +36,7 @@ export default function Price({
           <div className="flex justify-center items-end">
             {!isEditable ? (
               <p className="font-Coolvetica text-[10em] text-[#F6762D] pt-10 text-center">
-                {"₹" + stayPrice}
+                {"₹" + price}
               </p>
             ) : (
               <p>
@@ -36,12 +45,12 @@ export default function Price({
                 </span>
                 <input
                   autoFocus
-                  type="text"
+                  type="number"
                   pattern="([0-9]+.{0,1}[0-9]*,{0,1})*[0-9]"
                   className="font-Coolvetica text-[10em] text-[#F6762D] mt-10 text-center outline-none w-[412px]"
-                  value={stayPrice}
+                  value={price}
                   onChange={(eV) => {
-                    setStayPrice(eV.target.value);
+                    setPrice(Number(eV.target.value));
                   }}
                   onBlur={() => {
                     setIsEditable(false);

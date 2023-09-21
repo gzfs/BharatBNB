@@ -11,15 +11,15 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Link from "next/link";
+import { useListingStore } from "@/hooks/useListingStore";
 
 export default function Structure({
   params,
 }: {
   params: { listingid: string };
 }) {
-  const [structureType, setStructureType] = useState("");
+  const {StructureType:structureType,setStructureType} = useListingStore();
   return (
     <main className="h-[80vh]">
       <div className="h-full flex flex-col items-center">

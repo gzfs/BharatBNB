@@ -20,7 +20,7 @@ export default function TellUsAboutYourPlace({
           Tell us about your place.
         </p>
         <p className="text-xl text-[#F6762D]">
-          In this step, we'll ask you which type of property you have
+          In this step, we&apos;ll ask you which type of property you have
           and if guests will book the entire place or just a room.
           Then let us know the location and how many guests can stay.
         </p>

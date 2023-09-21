@@ -1,22 +1,19 @@
 "use client";
 
-import { Home } from "lucide-react";
 
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, useState } from "react";
 import Link from "next/link";
 import { Amenity } from "@/app/_components/AmenitiesType";
 import AmenitiesRender from "@/app/_components/AmenitiesType";
+import { useListingStore } from "@/hooks/useListingStore";
 
 export default function Amenities({
   params,
 }: {
   params: { listingid: string };
 }) {
-  const [amenitiesList, setAmenitiesList]: [
-    amenitiesList: Amenity[] | undefined,
-    setAmenitiesList: Dispatch<SetStateAction<Amenity[] | undefined>>
-  ] = useState();
+
+  const {Amenities:amenitiesList,setAmenities:setAmenitiesList} = useListingStore();
 
   const totalAmenities: Amenity[] = [
     {

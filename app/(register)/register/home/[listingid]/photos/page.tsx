@@ -1,6 +1,7 @@
 "use client";
 
 import UploadFilesModal from "@/components/modals/uploadFilesModal";
+import { useListingStore } from "@/hooks/useListingStore";
 import { useModalStore } from "@/hooks/useModalStore";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -14,14 +15,11 @@ export default function Photos({
   const {onOpen} = useModalStore();
 
   // The uploaded images (URL) will be stored over here.
-  const [uploadFiles, setUploadFiles]: [
-    uploadFiles: any,
-    setUploadFiles: Dispatch<SetStateAction<any>>
-  ] = useState();
+  const {setImages} =  useListingStore();
 
   return (
     <main className="px-10">
-      <UploadFilesModal setUploadFiles={setUploadFiles}/>
+      <UploadFilesModal setUploadFiles={setImages}/>
       <div className="flex flex-col h-full px-5 md:px-0">
         <motion.p
           animate={{ opacity: 1 }}

@@ -1,19 +1,26 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { useListingStore } from "@/hooks/useListingStore";
 import { motion } from "framer-motion";
-import { Bath, BedDouble, User } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function MoreDetails({
   params,
 }: {
   params: { listingid: string };
 }) {
-  const [guestCount, setGuestCount] = useState(1);
-  const [bedroomCount, setBedroomCount] = useState(0);
+
+  const [isMounted, setIsMounted] = useState(false);
   const [bedsCount, setBedsCount] = useState(0);
-  const [bathroomsCount, setBathroomsCount] = useState(0);
+  const {maxAccomodation,setMaxAccomodation} = useListingStore();
+
+  useEffect(() => {
+    setIsMounted(true);
+  },[])
+
+  if(!isMounted) return null;
   return (
     <main className="h-[80vh] px-10">
       <div className="h-full flex flex-col items-center justify-evenly">
@@ -62,18 +69,18 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (guestCount > 1) setGuestCount(guestCount - 1);
+                  if(maxAccomodation.Guests > 0)setMaxAccomodation('Guests','-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
-                {guestCount}
+                {maxAccomodation.Guests}
               </p>
               <img
                 src="/assets/imgs/icons/Plus.svg"
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setGuestCount(guestCount + 1);
+                  setMaxAccomodation('Guests','+');
                 }}
               />
             </div>
@@ -83,19 +90,18 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (bedroomCount > 0)
-                    setBedroomCount(bedroomCount - 1);
+                  if (maxAccomodation.Bedroom > 0) setMaxAccomodation('Bedroom','-')
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
-                {bedroomCount}
+                {maxAccomodation.Bedroom}
               </p>
               <img
                 src="/assets/imgs/icons/Plus.svg"
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setBedroomCount(bedroomCount + 1);
+                  setMaxAccomodation('Bedroom','+')
                 }}
               />
             </div>
@@ -105,19 +111,18 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (bathroomsCount > 0)
-                    setBathroomsCount(bathroomsCount - 1);
+                  if (maxAccomodation.Bathroom > 0)setMaxAccomodation('Bathroom','-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
-                {bathroomsCount}
+                {maxAccomodation.Bathroom}
               </p>
               <img
                 src="/assets/imgs/icons/Plus.svg"
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setBathroomsCount(bathroomsCount + 1);
+                  setMaxAccomodation('Bathroom','+');
                 }}
               />
             </div>
@@ -127,18 +132,18 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (bedsCount > 0) setBedsCount(bedsCount - 1);
+                  if (maxAccomodation.Bed > 0) setMaxAccomodation('Bed','-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
-                {bedsCount}
+                {maxAccomodation.Bed}
               </p>
               <img
                 src="/assets/imgs/icons/Plus.svg"
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setBedsCount(bedsCount + 1);
+                  setMaxAccomodation('Bed','+');
                 }}
               />
             </div>

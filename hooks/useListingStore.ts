@@ -1,33 +1,45 @@
-import { Address, Amenities, Coordinates, Images } from "@prisma/client";
+import { Amenity } from "@/app/_components/AmenitiesType";
+import { Point } from "@/app/_types/Bing.types";
+import {
+  Address,
+  Images,
+  MaxAcommodation,
+} from "@prisma/client";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 interface ListingStore {
-  coordinatesLattitude: number;
-  coordinatesLongitude: number;
+  // coordinates:Point | undefined
   Description: string;
   Name: string;
-  pricePerNight: number;
+  price: number;
   Address: Address;
-  Images: Images[];
-  Amenities: Amenities[];
+  Images: any;
+  Amenities: {
+    amenityType: string;
+    amenityName: string;
+  }[];
   StructureType: string;
   PrivacyType: string;
   setNameAndDesc: ({ name, desc }: { name: string; desc: string }) => void;
+  maxAccomodation: MaxAcommodation;
   setAddress: (addressObj: Address) => void;
-  setCoords: (coordsObj: Coordinates) => void;
+  // setCoords: (coords:Point | undefined) => void;
   setPrice: (price: number) => void;
-  setImages: (Images: Images[]) => void;
-  setAmenities: (amenityList: Amenities[]) => void;
+  setImages: (Images: any) => void;
+  setAmenities: (amenityList: Amenity[]) => void;
   setPrivacyType: (privacyType: string) => void;
   setStructureType: (structureType: string) => void;
+  setMaxAccomodation: (field: string, operation: string) => void;
 }
 
 export const useListingStore = create(
   persist<ListingStore>(
-    (set) => ({
-      coordinatesLattitude: 0.0,
-      coordinatesLongitude: 0.0,
+    (set, get) => ({
+      coordinates:{
+        type:'Point',
+        coordinates:[1,2]
+      },
       Description: "",
       Name: "",
       Address: {
@@ -42,9 +54,22 @@ export const useListingStore = create(
       },
       Amenities: [],
       Images: [],
-      pricePerNight: 0,
+      price: 0,
       StructureType: "",
       PrivacyType: "",
+      maxAccomodation: {
+        Bath: 0,
+        Bed: 0,
+        Bedroom: 0,
+        Bathroom: 0,
+        Guests: 0,
+        ID: "",
+      },
+      // setCoords(coords) {
+      //   set({
+      //     coordinates:coords
+      //   })
+      // },
       setNameAndDesc: ({ name, desc }: { name: string; desc: string }) =>
         set({
           Name: name,
@@ -54,20 +79,15 @@ export const useListingStore = create(
         set({
           Address: addressObj,
         }),
-      setCoords: (coordsObj: Coordinates) =>
-        set({
-          coordinatesLattitude: coordsObj.Lattitude,
-          coordinatesLongitude: coordsObj.Longitude,
-        }),
       setPrice: (price: number) =>
         set({
-          pricePerNight: price,
+          price: price,
         }),
-      setImages: (Images: Images[]) =>
+      setImages: (Images: any) =>
         set({
           Images: Images,
         }),
-      setAmenities: (amenityList: Amenities[]) =>
+      setAmenities: (amenityList: Amenity[]) =>
         set({
           Amenities: amenityList,
         }),
@@ -79,6 +99,17 @@ export const useListingStore = create(
         set({
           StructureType: structureType,
         }),
+      setMaxAccomodation(field, operation) {
+        set({
+          maxAccomodation: {
+            ...get().maxAccomodation,
+            [field]:
+              operation === "+"
+                ? get().maxAccomodation[field] + 1
+                : get().maxAccomodation[field] - 1,
+          },
+        });
+      },
     }),
     { name: "listingStore", storage: createJSONStorage(() => localStorage) }
   )
