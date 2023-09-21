@@ -10,16 +10,16 @@ interface ListingStore {
     Address: Address,
     Images: Images[],
     Amenities: Amenities[],
-    StructureType: String,
-    PrivacyType: String,
+    StructureType: string,
+    PrivacyType: string,
     setNameAndDesc: ({ name, desc }: { name: string, desc: string }) => void,
     setAddress: (addressObj: Address) => void,
     setCoords: (coordsObj: Coordinates) => void,
     setPrice: (price: number) => void,
     setImages: (Images: Images[]) => void,
     setAmenities: (amenityList: Amenities[]) => void
-    setPrivacyType: (privacyType: String) => void
-    setStructureType: (structureType: String) => void
+    setPrivacyType: (privacyType: string) => void
+    setStructureType: (structureType: string) => void
 }
 
 export const useListingStore = create<ListingStore>((set) => ({
@@ -62,10 +62,10 @@ export const useListingStore = create<ListingStore>((set) => ({
     setAmenities: (amenityList: Amenities[]) => set({
         Amenities: amenityList
     }),
-    setPrivacyType: (privacyType: String) => set({
+    setPrivacyType: (privacyType: string) => set({
         PrivacyType: privacyType
     }),
-    setStructureType: (structureType: String) => set({
+    setStructureType: (structureType: string) => set({
         StructureType: structureType
     }),
 
