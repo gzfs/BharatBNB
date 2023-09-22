@@ -13,7 +13,6 @@ export default function MoreDetails({
 }) {
 
   const [isMounted, setIsMounted] = useState(false);
-  const [bedsCount, setBedsCount] = useState(0);
   const { maxAccomodation, setMaxAccomodation } = useListingStore();
 
   useEffect(() => {
