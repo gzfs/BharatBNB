@@ -31,14 +31,14 @@ const ChatBotModal = () => {
   const sendMessage = async () => {
     setIsLoading(true)
     setMessages((prev) => [...prev, { role: "user", message: userMessage }]);
+    setUserMessage("")
 
     const res = await fetch("/api/openai", {
       method: "POST",
       body: JSON.stringify({ userPrompt: userMessage }),
     });
-    const data:ChatCompletion = await res.json()
-    setMessages((prev) => [...prev,{role:'bot',message:data.choices[0].message.content!}])
-    setUserMessage("")
+    const data = await res.json()
+    setMessages((prev) => [...prev,{role:'bot',message:data?.chatCompletion[0]?.message?.content!}])
     setIsLoading(false)
   };
 
@@ -54,8 +54,12 @@ const ChatBotModal = () => {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex flex-col">
-          <div className="flex-1">{/* Messages go here */}</div>
+        <div className="flex flex-col px-2">
+          <div className="flex-1">
+            {messages?.map((message) => (
+                <p key={message.role}>{message.message}</p>
+            ))}
+          </div>
           <div className="flex">
             <input
               className="flex-1 border-0 outline-none p-2"
