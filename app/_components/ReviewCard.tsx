@@ -12,7 +12,7 @@ const ReviewCard = () => {
         <div className="ml-4 mt-4">
           <div className="leading-[18px]">
             <p className="font-Coolvetica text-[#F6762D] text-xl">
-              Mass Murugan
+              Timothy
             </p>
             <p className="font-Coolvetica text-[#AC8080]">
               Joined in September 11,2001

@@ -16,7 +16,7 @@ const OwnerDetail = () => {
 
           <div className="flex flex-col leading-tight ml-4">
             <p className="font-Coolvetica text-[#F6762D] text-2xl">
-              Chad Murugan
+              David
             </p>
             <p className="font-Coolvetica text-[#AC8080] text-lg">
               Joined in September 11,2001
