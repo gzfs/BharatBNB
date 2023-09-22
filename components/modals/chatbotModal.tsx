@@ -54,7 +54,7 @@ const ChatBotModal = () => {
         </DialogHeader>
 
         <div className="flex flex-col px-2">
-          <div className="flex-1 overflow-scroll">
+          <div className="flex-1 overflow-y-scroll">
             {messages?.map((message) => (
                 <p key={message.role}>{message.message}</p>
             ))}
