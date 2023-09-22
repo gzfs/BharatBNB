@@ -66,10 +66,10 @@ export default function SingleHotel() {
           <div className="flex flex-col gap-y-5 mt-5">
             <div className="flex items-center justify-between">
               <span className="font-Coolvetica text-[#F6762D] text-xl">
-                ₹7936 per night x15
+                ₹0 per night x15
               </span>
               <span className="font-Coolvetica text-[#F6762D] text-xl">
-                ₹2,63,072
+                ₹0
               </span>
             </div>
 
@@ -78,7 +78,7 @@ export default function SingleHotel() {
                 BharatBNB Service Fee
               </span>
               <span className="font-Coolvetica text-[#F6762D] text-xl">
-                ₹30
+                ₹0
               </span>
             </div>
 
@@ -87,7 +87,7 @@ export default function SingleHotel() {
                 Total Before Taxes
               </span>
               <span className="font-Coolvetica text-[#F6762D] text-xl">
-                ₹35161
+                ₹0
               </span>
             </div>
           </div>
