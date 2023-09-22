@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Amenity } from "@/app/_components/AmenitiesType";
+import { Amenity } from "@/app/_types/Listing.types";
 import AmenitiesRender from "@/app/_components/AmenitiesType";
 import { useListingStore } from "@/hooks/useListingStore";
 

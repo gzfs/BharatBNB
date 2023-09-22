@@ -8,7 +8,7 @@ const openai = new OpenAI({
 
 export async function POST(postReq: NextRequest) {
     const chatCompletion = await openai.chat.completions.create({
-        messages: [{ role: 'user', content: "BharatBNB Chatbot - Ask me any tourism related questions or seek recommendations!" }],
+        messages: [{ role: 'user', content: "You are a Travel Advisor" }],
         model: 'gpt-3.5-turbo',
     })
 
