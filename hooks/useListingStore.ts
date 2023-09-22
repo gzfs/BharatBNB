@@ -1,9 +1,6 @@
 import { Amenity } from "@/app/_components/AmenitiesType";
-import { Point } from "@/app/_types/Bing.types";
 import {
   Address,
-  Images,
-  MaxAcommodation,
 } from "@prisma/client";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
