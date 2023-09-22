@@ -25,7 +25,13 @@ interface ListingStore {
   StructureType: string;
   PrivacyType: string;
   setNameAndDesc: ({ name, desc }: { name: string; desc: string }) => void;
-  maxAccomodation: MaxAcommodation;
+  maxAccomodation: {
+    Bedroom: number,
+    Bed: number,
+    Bathroom: number,
+    Bath: number
+    Guests: number
+  }
   setAddress: (addressObj: Address) => void;
   setCoords: (coords: {
     longitude: number,
