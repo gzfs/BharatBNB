@@ -9,7 +9,10 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 interface ListingStore {
-  // coordinates:Point | undefined
+  coordinatePoint: {
+    longitude: number,
+    lattitude: number
+  }
   Description: string;
   Name: string;
   price: number;
@@ -24,7 +27,10 @@ interface ListingStore {
   setNameAndDesc: ({ name, desc }: { name: string; desc: string }) => void;
   maxAccomodation: MaxAcommodation;
   setAddress: (addressObj: Address) => void;
-  // setCoords: (coords:Point | undefined) => void;
+  setCoords: (coords: {
+    longitude: number,
+    lattitude: number
+  } | undefined) => void;
   setPrice: (price: number) => void;
   setImages: (Images: any) => void;
   setAmenities: (amenityList: Amenity[]) => void;
@@ -36,9 +42,9 @@ interface ListingStore {
 export const useListingStore = create(
   persist<ListingStore>(
     (set, get) => ({
-      coordinates:{
-        type:'Point',
-        coordinates:[1,2]
+      coordinatePoint: {
+        lattitude: 0.0,
+        longitude: 0.0
       },
       Description: "",
       Name: "",
@@ -65,11 +71,14 @@ export const useListingStore = create(
         Guests: 0,
         ID: "",
       },
-      // setCoords(coords) {
-      //   set({
-      //     coordinates:coords
-      //   })
-      // },
+      setCoords(coords: {
+        longitude: number,
+        lattitude: number
+      } | undefined) {
+        set({
+          coordinatePoint: coords
+        })
+      },
       setNameAndDesc: ({ name, desc }: { name: string; desc: string }) =>
         set({
           Name: name,

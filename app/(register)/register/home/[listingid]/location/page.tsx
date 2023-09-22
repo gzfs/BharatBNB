@@ -5,6 +5,7 @@ import {
   Resource,
   Point,
 } from "@/app/_types/Bing.types";
+import { useListingStore } from "@/hooks/useListingStore";
 import ReactBingMap, { Pushpin } from "@3acaga/react-bing-maps";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -29,10 +30,12 @@ export default function Location({
     setLocationString: Dispatch<SetStateAction<string | undefined>>
   ] = useState();
 
-  const [locationCoords, setLocationCoords]: [
-    locationCoords: Point | undefined,
-    setLocationCoords: Dispatch<SetStateAction<Point | undefined>>
-  ] = useState();
+  // const [locationCoords, setLocationCoords]: [
+  //   locationCoords: Point | undefined,
+  //   setLocationCoords: Dispatch<SetStateAction<Point | undefined>>
+  // ] = useState();
+
+  const { coordinatePoint: locationCoords, setCoords: setLocationCoords } = useListingStore();
 
   return (
     <main className="px-10">
@@ -132,14 +135,17 @@ export default function Location({
               {locationsArray?.map((locationArray) => {
                 return (
                   <motion.div
-                  key={locationArray.point.coordinates[0]}
+                    key={locationArray.point.coordinates[0]}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                     initial={{ opacity: 0 }}
                     className="w-[400px] py-4 px-6 mt-2  outline-none  border-b-1 font-Coolvetica whitespace-nowrap overflow-hidden cursor-pointer"
                     onClick={() => {
                       setShowResults(false);
-                      setLocationCoords(locationArray.point);
+                      setLocationCoords({
+                        lattitude: locationArray.point.coordinates[0],
+                        longitude: locationArray.point.coordinates[1]
+                      });
                     }}
                   >
                     {locationArray.name}
@@ -168,8 +174,8 @@ export default function Location({
             disablePanning={true}
             showLocateMeButton={false}
             center={{
-              latitude: locationCoords?.coordinates[0] || 28.38,
-              longitude: locationCoords?.coordinates[1] || 77.12,
+              latitude: locationCoords?.lattitude || 28.38,
+              longitude: locationCoords?.longitude || 77.12,
             }}
             zoom={18}
             disableScrollWheelZoom={true}
@@ -177,8 +183,8 @@ export default function Location({
             {locationCoords ? (
               <Pushpin
                 location={{
-                  latitude: locationCoords?.coordinates[0],
-                  longitude: locationCoords?.coordinates[1],
+                  latitude: locationCoords?.lattitude,
+                  longitude: locationCoords?.longitude,
                 }}
               />
             ) : (

@@ -1,6 +1,5 @@
 "use client";
 
-
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Amenity } from "@/app/_components/AmenitiesType";
@@ -13,7 +12,7 @@ export default function Amenities({
   params: { listingid: string };
 }) {
 
-  const {Amenities:amenitiesList,setAmenities:setAmenitiesList} = useListingStore();
+  const { Amenities: amenitiesList, setAmenities: setAmenitiesList } = useListingStore();
 
   const totalAmenities: Amenity[] = [
     {
