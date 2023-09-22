@@ -69,7 +69,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Guests > 0) setMaxAccomodation('Guests', '-');
+                  if (maxAccomodation.Guests > 1) setMaxAccomodation('Guests', '-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -90,7 +90,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Bedroom > 0) setMaxAccomodation('Bedroom', '-')
+                  if (maxAccomodation.Bedroom > 1) setMaxAccomodation('Bedroom', '-')
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -111,7 +111,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Bathroom > 0) setMaxAccomodation('Bathroom', '-');
+                  if (maxAccomodation.Bathroom > 1) setMaxAccomodation('Bathroom', '-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -132,7 +132,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Bed > 0) setMaxAccomodation('Bed', '-');
+                  if (maxAccomodation.Bed > 1) setMaxAccomodation('Bed', '-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">

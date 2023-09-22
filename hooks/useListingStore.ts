@@ -48,12 +48,11 @@ export const useListingStore = create(
       StructureType: "",
       PrivacyType: "",
       maxAccomodation: {
-        Bath: 0,
-        Bed: 0,
-        Bedroom: 0,
-        Bathroom: 0,
-        Guests: 0,
-        ID: "",
+        Bath: 1,
+        Bed: 1,
+        Bedroom: 1,
+        Bathroom: 1,
+        Guests: 1,
       },
       setCoords(coords:Coordinates  | undefined) {
         set({
