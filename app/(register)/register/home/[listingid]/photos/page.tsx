@@ -5,7 +5,6 @@ import { useListingStore } from "@/hooks/useListingStore";
 import { useModalStore } from "@/hooks/useModalStore";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Dispatch, SetStateAction, useState } from "react";
 
 export default function Photos({
   params,
