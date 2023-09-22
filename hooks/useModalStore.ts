@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type ModalType = "uploadFiles";
+export type ModalType = "uploadFiles" | "chatBot";
 
 interface ModalStore {
     type: ModalType | null,
