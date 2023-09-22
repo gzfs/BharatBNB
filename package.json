@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@3acaga/react-bing-maps": "0.0.0-beta.11",
-    "@clerk/nextjs": "^4.23.5",
+    "@clerk/nextjs": "^4.24.0",
     "@hookform/resolvers": "^3.3.1",
     "@possumsnorts/react-bingmaps": "^3.6.3",
     "@prisma/client": "5.3.1",
@@ -24,7 +24,7 @@
     "@types/node": "20.6.1",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "@uploadthing/react": "^5.6.0",
+    "@uploadthing/react": "^5.6.1",
     "autoprefixer": "10.4.15",
     "bingmaps": "^2.0.3",
     "class-variance-authority": "^0.7.0",
@@ -40,18 +40,19 @@
     "react": "18.2.0",
     "react-day-picker": "^8.8.2",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.46.1",
+    "react-hook-form": "^7.46.2",
     "react-svgmap-india": "^1.1.0",
     "state-district-component": "^1.0.3",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2",
-    "uploadthing": "^5.6.0",
+    "uploadthing": "^5.6.1",
     "zod": "^3.22.2",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.22.15",
     "prisma": "^5.3.1"
   }
 }
