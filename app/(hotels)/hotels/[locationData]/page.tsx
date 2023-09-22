@@ -33,7 +33,7 @@ export default function HotelsBasedOnLocationPage({
         <HotelCard hotelID="sjfhwuiqyr9q273" />
       </div>
 
-      <Button onClick={() => onOpen("chatBot")} className="bg-[#4BAF32] fixed bottom-10 right-10">
+      <Button onClick={() => onOpen("chatBot")} className="bg-[#4BAF32] fixed bottom-10 right-10 rounded-full py-4">
         <MessageSquarePlus />
       </Button>
     </main>
