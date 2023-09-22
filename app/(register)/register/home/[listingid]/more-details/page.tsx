@@ -14,13 +14,13 @@ export default function MoreDetails({
 
   const [isMounted, setIsMounted] = useState(false);
   const [bedsCount, setBedsCount] = useState(0);
-  const {maxAccomodation,setMaxAccomodation} = useListingStore();
+  const { maxAccomodation, setMaxAccomodation } = useListingStore();
 
   useEffect(() => {
     setIsMounted(true);
-  },[])
+  }, [])
 
-  if(!isMounted) return null;
+  if (!isMounted) return null;
   return (
     <main className="h-[80vh] px-10">
       <div className="h-full flex flex-col items-center justify-evenly">
@@ -69,7 +69,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if(maxAccomodation.Guests > 0)setMaxAccomodation('Guests','-');
+                  if (maxAccomodation.Guests > 0) setMaxAccomodation('Guests', '-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -80,7 +80,7 @@ export default function MoreDetails({
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setMaxAccomodation('Guests','+');
+                  setMaxAccomodation('Guests', '+');
                 }}
               />
             </div>
@@ -90,7 +90,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Bedroom > 0) setMaxAccomodation('Bedroom','-')
+                  if (maxAccomodation.Bedroom > 0) setMaxAccomodation('Bedroom', '-')
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -101,7 +101,7 @@ export default function MoreDetails({
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setMaxAccomodation('Bedroom','+')
+                  setMaxAccomodation('Bedroom', '+')
                 }}
               />
             </div>
@@ -111,7 +111,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Bathroom > 0)setMaxAccomodation('Bathroom','-');
+                  if (maxAccomodation.Bathroom > 0) setMaxAccomodation('Bathroom', '-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -122,7 +122,7 @@ export default function MoreDetails({
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setMaxAccomodation('Bathroom','+');
+                  setMaxAccomodation('Bathroom', '+');
                 }}
               />
             </div>
@@ -132,7 +132,7 @@ export default function MoreDetails({
                 alt="Decrement"
                 className="cursor-pointer"
                 onClick={() => {
-                  if (maxAccomodation.Bed > 0) setMaxAccomodation('Bed','-');
+                  if (maxAccomodation.Bed > 0) setMaxAccomodation('Bed', '-');
                 }}
               />
               <p className="font-Coolvetica text-xl text-[#F6762D]">
@@ -143,7 +143,7 @@ export default function MoreDetails({
                 alt="Increment"
                 className="cursor-pointer"
                 onClick={() => {
-                  setMaxAccomodation('Bed','+');
+                  setMaxAccomodation('Bed', '+');
                 }}
               />
             </div>
