@@ -1,12 +1,8 @@
 "use client";
 
-import React, { ReactNode } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import { Amenity } from "../_types/Listing.types";
 
-export type Amenity = {
-  amenityType: string;
-  amenityName: string;
-};
 
 export default function AmenitiesRender({
   amenitiesList,

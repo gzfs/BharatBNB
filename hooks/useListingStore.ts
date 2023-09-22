@@ -1,39 +1,21 @@
-import { Amenity } from "@/app/_components/AmenitiesType";
-import {
-  Address,
-} from "@prisma/client";
+import { Address, Amenity, Coordinates, MaxAccomodation } from "@/app/_types/Listing.types";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 interface ListingStore {
-  coordinatePoint: {
-    longitude: number,
-    lattitude: number
-  }
+  coordinatePoint: Coordinates
   Description: string;
   Name: string;
   price: number;
   Address: Address;
   Images: any;
-  Amenities: {
-    amenityType: string;
-    amenityName: string;
-  }[];
+  Amenities: Amenity[];
   StructureType: string;
   PrivacyType: string;
   setNameAndDesc: ({ name, desc }: { name: string; desc: string }) => void;
-  maxAccomodation: {
-    Bedroom: number,
-    Bed: number,
-    Bathroom: number,
-    Bath: number
-    Guests: number
-  }
+  maxAccomodation: MaxAccomodation,
   setAddress: (addressObj: Address) => void;
-  setCoords: (coords: {
-    longitude: number,
-    lattitude: number
-  } | undefined) => void;
+  setCoords: (coords: Coordinates| undefined) => void;
   setPrice: (price: number) => void;
   setImages: (Images: any) => void;
   setAmenities: (amenityList: Amenity[]) => void;
@@ -52,14 +34,13 @@ export const useListingStore = create(
       Description: "",
       Name: "",
       Address: {
-        City: "",
-        County: "",
-        HouseName: "",
-        HouseNumber: "",
-        ID: "",
-        Pincode: "",
-        StreetAddress: "",
-        Landmark: "",
+        city:"",
+        country:"",
+        houseName:"",
+        houseNumber:"",
+        landmark:"",
+        pincode:"",
+        streetAddress:""
       },
       Amenities: [],
       Images: [],
@@ -74,10 +55,7 @@ export const useListingStore = create(
         Guests: 0,
         ID: "",
       },
-      setCoords(coords: {
-        longitude: number,
-        lattitude: number
-      } | undefined) {
+      setCoords(coords:Coordinates  | undefined) {
         set({
           coordinatePoint: coords
         })
