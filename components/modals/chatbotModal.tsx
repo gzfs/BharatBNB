@@ -12,7 +12,6 @@ import "@uploadthing/react/styles.css";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { SendHorizonal } from "lucide-react";
-import { ChatCompletion } from "openai/resources/chat/index.mjs";
 
 type Message = {
   role: "user" | "bot";
@@ -55,7 +54,7 @@ const ChatBotModal = () => {
         </DialogHeader>
 
         <div className="flex flex-col px-2">
-          <div className="flex-1">
+          <div className="flex-1 overflow-scroll">
             {messages?.map((message) => (
                 <p key={message.role}>{message.message}</p>
             ))}
