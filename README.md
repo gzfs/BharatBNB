@@ -1,34 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BharatBNB: Your Ultimate Travel, Tourism, and Food Companion
 
-## Getting Started
+BharatBNB is an innovative application that seamlessly integrates travel, tourism, and food experiences into one comprehensive platform. Powered by cutting-edge AI technology, BharatBNB provides specialized itineraries tailored to your preferences and budget, ensuring a memorable journey across India. Additionally, BharatBNB offers integrated food ordering and cab services to enhance your travel experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **AI-Powered Itinerary Planning**: Utilize advanced AI algorithms to generate personalized travel itineraries based on your interests, budget, and schedule.
+- **Comprehensive Destination Guides**: Explore detailed destination guides curated by travel experts, featuring top attractions, accommodations, and local insights.
+- **Integrated Food Ordering**: Discover and order delicious local cuisines directly from the app, ensuring a gastronomic adventure wherever you go.
+- **Convenient Cab Services**: Seamlessly book reliable cab services for hassle-free transportation between destinations, with options for various vehicle types and budgets.
+- **Real-Time Updates**: Stay informed with real-time updates on travel conditions, weather forecasts, and local events, ensuring a smooth and enjoyable journey.
+- **User-Friendly Interface**: Enjoy a sleek and intuitive interface designed for effortless navigation and seamless user experience.
